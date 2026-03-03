@@ -1,4 +1,4 @@
-package com.tal_ben_shushan.hitster
+package com.tal_ben_shushan.beatBlitz
 
 import android.app.Application
 import android.content.res.Configuration
@@ -16,7 +16,7 @@ import com.facebook.react.defaults.DefaultReactNativeHost
 import expo.modules.ApplicationLifecycleDispatcher
 import expo.modules.ReactNativeHostWrapper
 
-import com.tal_ben_shushan.hitster.SpotifyPackage;
+import com.tal_ben_shushan.beatBlitz.SpotifyPackage;
 
 class MainApplication : Application(), ReactApplication {
 

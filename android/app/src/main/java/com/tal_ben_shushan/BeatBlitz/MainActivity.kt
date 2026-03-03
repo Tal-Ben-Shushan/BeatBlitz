@@ -1,4 +1,4 @@
-package com.tal_ben_shushan.hitster
+package com.tal_ben_shushan.beatBlitz
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build

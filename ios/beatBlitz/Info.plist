@@ -7,7 +7,7 @@
     <key>CFBundleDevelopmentRegion</key>
     <string>$(DEVELOPMENT_LANGUAGE)</string>
     <key>CFBundleDisplayName</key>
-    <string>hitster</string>
+    <string>beatBlitz</string>
     <key>CFBundleExecutable</key>
     <string>$(EXECUTABLE_NAME)</string>
     <key>CFBundleIdentifier</key>
@@ -27,8 +27,8 @@
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
-          <string>hitster</string>
-          <string>com.tal-ben-shushan.hitster</string>
+          <string>beatBlitz</string>
+          <string>com.tal-ben-shushan.beatBlitz</string>
         </array>
       </dict>
     </array>

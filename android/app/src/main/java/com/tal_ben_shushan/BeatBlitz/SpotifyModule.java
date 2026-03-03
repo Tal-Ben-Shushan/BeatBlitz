@@ -1,4 +1,4 @@
-package com.tal_ben_shushan.hitster;
+package com.tal_ben_shushan.beatBlitz;
 
 import com.facebook.react.bridge.*;
 import com.spotify.android.appremote.api.*;

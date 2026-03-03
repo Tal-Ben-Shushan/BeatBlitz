@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "hitster.app"
-               BlueprintName = "hitster"
-               ReferencedContainer = "container:hitster.xcodeproj">
+               BuildableName = "beatBlitz.app"
+               BlueprintName = "beatBlitz"
+               ReferencedContainer = "container:beatBlitz.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "hitsterTests.xctest"
-               BlueprintName = "hitsterTests"
-               ReferencedContainer = "container:hitster.xcodeproj">
+               BuildableName = "beatBlitzTests.xctest"
+               BlueprintName = "beatBlitzTests"
+               ReferencedContainer = "container:beatBlitz.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "hitster.app"
-            BlueprintName = "hitster"
-            ReferencedContainer = "container:hitster.xcodeproj">
+            BuildableName = "beatBlitz.app"
+            BlueprintName = "beatBlitz"
+            ReferencedContainer = "container:beatBlitz.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "hitster.app"
-            BlueprintName = "hitster"
-            ReferencedContainer = "container:hitster.xcodeproj">
+            BuildableName = "beatBlitz.app"
+            BlueprintName = "beatBlitz"
+            ReferencedContainer = "container:beatBlitz.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
