@@ -1,19 +1,48 @@
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import SpotifyModule, { SpotifyPlayerState } from "./SpotifyModule";
 
-const BASE_URL = "https://api.spotify.com/v1";
+const CLIENT_ID = "YOUR_CLIENT_ID";
+const REDIRECT_URI = "myapp://spotify-auth";
 
-export const getPlaylists = async () => {
-  const token = await AsyncStorage.getItem("spotify_access_token");
-  const res = await fetch(`${BASE_URL}/me/playlists`, {
-    headers: { Authorization: `Bearer ${token}` },
-  });
-  return await res.json();
-};
+class SpotifyService {
+  async connect() {
+    return SpotifyModule.connect(CLIENT_ID, REDIRECT_URI);
+  }
 
-export const getSavedTracks = async () => {
-  const token = await AsyncStorage.getItem("spotify_access_token");
-  const res = await fetch(`${BASE_URL}/me/tracks`, {
-    headers: { Authorization: `Bearer ${token}` },
-  });
-  return await res.json();
-};
+  async disconnect() {
+    return SpotifyModule.disconnect();
+  }
+
+  async playTrack(trackId: string) {
+    return SpotifyModule.playUri(`spotify:track:${trackId}`);
+  }
+
+  async playPlaylist(playlistId: string) {
+    return SpotifyModule.playUri(`spotify:playlist:${playlistId}`);
+  }
+
+  async pause() {
+    return SpotifyModule.pause();
+  }
+
+  async resume() {
+    return SpotifyModule.resume();
+  }
+
+  async skipNext() {
+    return SpotifyModule.skipNext();
+  }
+
+  async skipPrevious() {
+    return SpotifyModule.skipPrevious();
+  }
+
+  async seek(positionMs: number) {
+    return SpotifyModule.seekTo(positionMs);
+  }
+
+  async getState(): Promise<SpotifyPlayerState> {
+    return SpotifyModule.getPlayerState();
+  }
+}
+
+export default new SpotifyService();
