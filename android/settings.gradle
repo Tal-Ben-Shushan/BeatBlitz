@@ -44,7 +44,7 @@ includeBuild(expoAutolinking.reactNativeGradlePlugin)
 
 // Ensure all repositories are available for dependencies
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+  repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         google()
         mavenCentral()  // Spotify + AsyncStorage
