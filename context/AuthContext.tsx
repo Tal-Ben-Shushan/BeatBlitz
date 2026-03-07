@@ -1,7 +1,7 @@
 // context/AuthContext.tsx
-import React, { createContext, useContext, useState, useEffect } from "react";
+import { spotifyAuthApi } from "@/services/api";
 import * as SecureStore from "expo-secure-store";
-import { env } from "@/config/env";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 type AuthContextType = {
   token: string | null;
@@ -23,17 +23,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const refreshToken = async (storedRefreshToken: string) => {
     try {
-      const response = await fetch("https://accounts.spotify.com/api/token", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({
-          grant_type: "refresh_token",
-          refresh_token: storedRefreshToken,
-          client_id: env.spotifyClientId,
-        }).toString(),
-      });
+      const data = await spotifyAuthApi.refreshToken(storedRefreshToken);
 
-      const data = await response.json();
       if (data.access_token) {
         const expirationDate = new Date().getTime() + data.expires_in * 1000;
         const newData = {

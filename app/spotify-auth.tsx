@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import { View, ActivityIndicator, Text } from "react-native";
-import { useRouter, useLocalSearchParams } from "expo-router";
+import { spotifyAuthApi } from "@/services/api";
 import * as AuthSession from "expo-auth-session";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import * as SecureStore from "expo-secure-store";
+import React, { useEffect } from "react";
+import { ActivityIndicator, Text, View } from "react-native";
 import { useAuth } from "../context/AuthContext";
-import { env } from "@/config/env";
 
 export default function SpotifyAuth() {
   const { setToken } = useAuth();
@@ -24,19 +24,7 @@ export default function SpotifyAuth() {
       // 1. GET THE VERIFIER WE SAVED IN THE PREVIOUS STEP
       const savedVerifier = await SecureStore.getItemAsync("temp_code_verifier");
 
-      const response = await fetch("https://accounts.spotify.com/api/token", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({
-          grant_type: "authorization_code",
-          code: authCode,
-          redirect_uri: redirectUri,
-          client_id: env.spotifyClientId,
-          code_verifier: savedVerifier || "", // Now it's not empty!
-        }).toString(),
-      });
-
-      const data = await response.json();
+      const data = await spotifyAuthApi.exchangeCode(authCode, redirectUri, savedVerifier || "");
 
       if (data.access_token) {
         // 2. CLEAN UP THE TEMPORARY VERIFIER
